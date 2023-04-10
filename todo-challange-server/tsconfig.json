@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+     "target": "esnext",
+     "module": "commonjs",
+     "outDir": "./dist",
+     "strict": true,
+     "moduleResolution": "node",
+     "esModuleInterop": true,
+     "skipLibCheck": true,
+     "forceConsistentCasingInFileNames": true,
+     "experimentalDecorators": true,
+     "strictPropertyInitialization": false,
+     "emitDecoratorMetadata": true,
+     "resolveJsonModule": true
+  }
+}
