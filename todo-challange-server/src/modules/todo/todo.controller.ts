@@ -58,7 +58,7 @@ export class TodoController {
 
     try {
       const createdTodo = await this.manager.save(todoInstance);
-      return ServerResponse.success(createdTodo);
+      return ServerResponse.success({...createdTodo, user: {}});
     }
     catch(err) {
       return ServerResponse.error.internal_server_error(err, "Something went wrong.");

@@ -69,7 +69,7 @@ export class GroupController {
       group.createdDate = new Date();
 
       await AppDataSource.manager.save(group);
-      return ServerResponse.success(group);
+      return ServerResponse.success({...group, user: {}});
     } catch(e) {
       return ServerResponse.error.internal_server_error(e, 'Something went wrong!');
     }
