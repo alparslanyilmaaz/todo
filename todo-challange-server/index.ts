@@ -1,5 +1,6 @@
 import * as bodyParser from 'body-parser';
 import express from 'express';
+import routes from './src/modules/routes';
 require('dotenv').config();
 
 import cors from 'cors';
@@ -11,7 +12,8 @@ const port = '8080';
 
 AppDataSource.initialize().catch(error => console.log(error));
 app.use(bodyParser.json());
-app.use(cors())
+app.use(cors());
+app.use(routes);
 
 app.get('/', (req, res) => {
   res.send('Express ');
