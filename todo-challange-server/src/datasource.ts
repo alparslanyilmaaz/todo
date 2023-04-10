@@ -1,5 +1,8 @@
 import "reflect-metadata"
 import { DataSource } from "typeorm"
+import { Group } from "./modules/group/group.entity"
+import { Todo } from "./modules/todo/todo.entity"
+import { User } from "./modules/user/user.entity"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
@@ -10,7 +13,7 @@ export const AppDataSource = new DataSource({
     database: "todo",
     synchronize: true,
     logging: false,
-    entities: [],
+    entities: [User, Group, Todo],
     migrations: [],
     subscribers: [],
 })
