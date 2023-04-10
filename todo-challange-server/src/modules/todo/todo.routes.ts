@@ -1,4 +1,3 @@
-// postRoutes.ts
 import { Router } from 'express';
 import { authenticate } from '../../middlewares/authenticate.middleware';
 import { TodoController } from './todo.controller';
