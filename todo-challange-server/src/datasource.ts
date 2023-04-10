@@ -6,10 +6,10 @@ import { User } from "./modules/user/user.entity"
 
 export const AppDataSource = new DataSource({
     type: "mysql",
-    host: "bizcuit-todo.cs8wmf2ijpbp.eu-central-1.rds.amazonaws.com",
+    host: process.env.DATA_SOURCE_HOST || 'localhost',
     port: 3306,
-    username: "admin",
-    password: "bizcuit-todo.126578",
+    username: process.env.DATA_SOURCE_USERNAME || 'root',
+    password: process.env.DATA_SOURCE_PASSWORD ||  'root',
     database: "todo",
     synchronize: true,
     logging: false,
