@@ -8,7 +8,7 @@ import { AppDataSource } from './src/datasource';
 
 const app = express();
 
-const port = '8080';
+const port = process.env.SERVER_PORT || '8080';
 
 AppDataSource.initialize().catch(error => console.log(error));
 app.use(bodyParser.json());
