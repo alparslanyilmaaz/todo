@@ -17,6 +17,9 @@ Let's get started!
 
 ## Accesing Deployed Project
 
+- Frontend: [https://bizcuit-todo-challange.netlify.app](https://bizcuit-todo-challange.netlify.app)
+- Backend: [https://bizcuit-todo-challange.onrender.com/](https://bizcuit-todo-challange.onrender.com/)
+
 <a name="requirements"/>
 
 ## Installing Project to Local
