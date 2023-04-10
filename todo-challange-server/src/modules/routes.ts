@@ -1,4 +1,3 @@
-// routes.ts
 import { Router } from 'express';
 import groupRoutes from './group/group.routes';
 import todoRoutes from './todo/todo.routes';
