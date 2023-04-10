@@ -140,7 +140,6 @@ export class TodoController {
       await this.manager.save(Todo, existingTodo);
       return ServerResponse.no_content();
     } catch(err) {
-      console.log(err);
       return ServerResponse.error.internal_server_error(null, 'Something went wrong!');
     }
   }
