@@ -12,5 +12,6 @@
      "strictPropertyInitialization": false,
      "emitDecoratorMetadata": true,
      "resolveJsonModule": true
-  }
+  },
+  "exclude": ["node_modules", "dist"]
 }

@@ -19,6 +19,8 @@ export class UserController {
  * @memberof UserController
  */
   async createUser(email: string, password: string) {
+    if(!email || !password) return ServerResponse.error.invalid_request(null, "Please provide valid body.");
+    
     const user = new User();
     user.email = email;
     user.password = password;
@@ -30,7 +32,7 @@ export class UserController {
       const token = jwt.sign({ 
         id: user.id 
       }, process.env.JWT_SECRET || '', { expiresIn: '1h' });
-      return ServerResponse.success({token})
+      return ServerResponse.success({token});
     } catch (error) {
       return ServerResponse.error.internal_server_error(error, "Error occured.");
     }
@@ -45,6 +47,8 @@ export class UserController {
  * @memberof UserController
  */
   async login(email: string, password: string){
+    if(!email || !password) return ServerResponse.error.invalid_request(null, 'Please provide valid values.');
+    
     try {
       const user = await AppDataSource.manager.findOne(User, {where: {email: email}});
       const isMatch = user?.checkIfPasswordMatch(password);
